@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Jeremy Blog.</title><meta name="description" content="This is my vuepress demo">
+    <link rel="preload" href="/blog/assets/style-693152cb.css" as="style"><link rel="stylesheet" href="/blog/assets/style-693152cb.css">
+    <link rel="modulepreload" href="/blog/assets/app-32a745cd.js"><link rel="modulepreload" href="/blog/assets/framework-204010b2.js"><link rel="modulepreload" href="/blog/assets/404.html-d1e63d77.js"><link rel="modulepreload" href="/blog/assets/404.html-f9875e7b.js"><link rel="prefetch" href="/blog/assets/index.html-47f0938b.js" as="script"><link rel="prefetch" href="/blog/assets/index.html-e76cb962.js" as="script"><link rel="prefetch" href="/blog/assets/list.html-32017fde.js" as="script"><link rel="prefetch" href="/blog/assets/index.html-5069b10e.js" as="script"><link rel="prefetch" href="/blog/assets/index.html-a796c005.js" as="script"><link rel="prefetch" href="/blog/assets/list.html-18a9290b.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/blog/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app-32a745cd.js" defer></script>
+  </body>
+</html>
