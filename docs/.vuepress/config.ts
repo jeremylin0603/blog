@@ -5,7 +5,7 @@ export default defineUserConfig({
   base: '/blog/',
 
   lang: 'zh-CN',
-  title: 'Jeremy Blog.',
+  title: 'Jeremy Blog',
   description: 'This is my vuepress demo',
 
   theme: defaultTheme({

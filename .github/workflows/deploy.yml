@@ -1,0 +1,35 @@
+# workflow name
+<<<<<<< HEAD
+name: Build and Deploy
+=======
+name: Deploy GitHub Pages
+>>>>>>> cd3090e (feat: github workflow YAML config)
+
+# trigger condition
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    # 執行步驟
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build dist
+        run: npm install && npm run docs:build
+
+      # 部署到 GitHub Pages
+      - name: Deploy on Github Pages
+        # 直接用別人寫好的 action
+<<<<<<< HEAD
+        uses: JamesIves/github-pages-deploy-action@v4
+=======
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+>>>>>>> cd3090e (feat: github workflow YAML config)
+        with:
+          branch: gh-pages
+          folder: docs/.vuepress/dist
