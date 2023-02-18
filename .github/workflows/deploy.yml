@@ -1,9 +1,5 @@
 # workflow name
-<<<<<<< HEAD
-name: Build and Deploy
-=======
 name: Deploy GitHub Pages
->>>>>>> cd3090e (feat: github workflow YAML config)
 
 # trigger condition
 on:
@@ -25,11 +21,7 @@ jobs:
       # 部署到 GitHub Pages
       - name: Deploy on Github Pages
         # 直接用別人寫好的 action
-<<<<<<< HEAD
-        uses: JamesIves/github-pages-deploy-action@v4
-=======
         uses: JamesIves/github-pages-deploy-action@4.1.5
->>>>>>> cd3090e (feat: github workflow YAML config)
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
