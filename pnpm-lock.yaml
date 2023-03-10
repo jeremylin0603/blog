@@ -2,11 +2,15 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vuepress/client': 2.0.0-beta.60
+  '@vuepress/plugin-register-components': 2.0.0-beta.60
+  prettier: ^2.8.4
   vue: ^3.2.47
   vuepress: 2.0.0-beta.60
 
 devDependencies:
   '@vuepress/client': 2.0.0-beta.60
+  '@vuepress/plugin-register-components': 2.0.0-beta.60
+  prettier: 2.8.4
   vue: 3.2.47
   vuepress: 2.0.0-beta.60_snvqa5y7zj4eyr5mp3ym37ho7q
 
@@ -547,7 +551,7 @@ packages:
       '@vuepress/shared': 2.0.0-beta.60
       '@vuepress/utils': 2.0.0-beta.60
       markdown-it: 13.0.1
-      markdown-it-anchor: 8.6.6_ea7kj7wzjkld5jo2noyjqxi764
+      markdown-it-anchor: 8.6.7_ea7kj7wzjkld5jo2noyjqxi764
       markdown-it-emoji: 2.0.2
       mdurl: 1.0.1
     transitivePeerDependencies:
@@ -655,6 +659,16 @@ packages:
     dependencies:
       '@vuepress/core': 2.0.0-beta.60
       prismjs: 1.29.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vuepress/plugin-register-components/2.0.0-beta.60:
+    resolution: {integrity: sha512-IG4+Dy1O/0dS0r9ytqAOcHFgMu1Jm8d4nDNEKV9ZT7QhWyeqy8+EL2Gtez5vq29YbPL9FqZZdwVpb9WPAD78Gw==}
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.60
+      '@vuepress/utils': 2.0.0-beta.60
+      chokidar: 3.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1224,8 +1238,8 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
-  /markdown-it-anchor/8.6.6_ea7kj7wzjkld5jo2noyjqxi764:
-    resolution: {integrity: sha512-jRW30YGywD2ESXDc+l17AiritL0uVaSnWsb26f+68qaW9zgbIIr1f4v2Nsvc0+s0Z2N3uX6t/yAw7BwCQ1wMsA==}
+  /markdown-it-anchor/8.6.7_ea7kj7wzjkld5jo2noyjqxi764:
+    resolution: {integrity: sha512-FlCHFwNnutLgVTflOYHPW2pPcl2AACqVzExlkGQNsi4CJgqOHN7YTgDd4LuhgN1BFO3TS0vLAruV1Td6dwWPJA==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
@@ -1404,6 +1418,12 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /prismjs/1.29.0:

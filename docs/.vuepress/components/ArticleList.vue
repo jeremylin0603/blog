@@ -1,7 +1,7 @@
 <script setup>
-console.log('ha')
+// console.log(new Date())
 </script>
 
 <template>
-  <h1>test</h1>
+  <h1>ArticleList.vue</h1>
 </template>

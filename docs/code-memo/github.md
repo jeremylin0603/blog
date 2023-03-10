@@ -1,3 +1,12 @@
+# Github
+
+## Actions
+
+### 設定
+
+#### 基本設定
+
+```yml
 # workflow name
 name: Deploy GitHub Pages
 
@@ -15,23 +24,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
-          # 是否用 pnpm 安裝依賴
-          run_install: true
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          # 與開發環境一至避免意外
-          node-version: 16.14.2
-          # 緩存 pnpm 依賴
-          cache: pnpm
-
       - name: Build dist
-        run: pnpm docs:build
+        run: npm install && npm run docs:build
 
       # 部署到 GitHub Pages
       - name: Deploy to Github Pages
@@ -40,3 +34,10 @@ jobs:
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
+```
+
+### 進階設定
+
+```yml
+
+```
