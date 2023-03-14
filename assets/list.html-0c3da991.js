@@ -1,0 +1,1 @@
+import{_ as s,M as a,p as c,q as o,N as r,Q as e,t as n}from"./framework-cd43f88a.js";const i={},_=e("h1",{id:"文章清單",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#文章清單","aria-hidden":"true"},"#"),n(" 文章清單")],-1);function l(d,h){const t=a("ArticleList");return c(),o("div",null,[_,r(t)])}const m=s(i,[["render",l],["__file","list.html.vue"]]);export{m as default};

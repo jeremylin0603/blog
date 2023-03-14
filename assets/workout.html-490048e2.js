@@ -1,0 +1,1 @@
+import{_ as t,p as o,q as r,Q as e,t as a}from"./framework-cd43f88a.js";const c={},s=e("h1",{id:"workout",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#workout","aria-hidden":"true"},"#"),a(" Workout")],-1),n=[s];function _(d,i){return o(),r("div",null,n)}const h=t(c,[["render",_],["__file","workout.html.vue"]]);export{h as default};

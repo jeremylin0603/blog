@@ -1,0 +1,1 @@
+import{_ as t,p as n,q as a,Q as e,t as c}from"./framework-cd43f88a.js";const o={},d=e("h1",{id:"存放-coding-外的所有想法紀錄",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#存放-coding-外的所有想法紀錄","aria-hidden":"true"},"#"),c(" 存放 Coding 外的所有想法紀錄")],-1),r=[d];function s(i,_){return n(),a("div",null,r)}const l=t(o,[["render",s],["__file","index.html.vue"]]);export{l as default};

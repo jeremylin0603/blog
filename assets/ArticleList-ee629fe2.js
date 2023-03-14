@@ -1,0 +1,1 @@
+import{_ as e,p as t,q as c}from"./framework-cd43f88a.js";const r={__name:"ArticleList",setup(s){return(_,i)=>(t(),c("h1",null,"ArticleList.vue"))}},o=e(r,[["__file","ArticleList.vue"]]);export{o as default};

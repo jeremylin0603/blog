@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-74bc627b","path":"/about/","title":"About","lang":"zh-CN","frontmatter":{},"headers":[{"level":3,"title":"關於第二大腦","slug":"關於第二大腦","link":"#關於第二大腦","children":[]}],"git":{"updatedTime":1678767292000,"contributors":[{"name":"jeremy","email":"jeremyl0603@gmail.com","commits":1}]},"filePathRelative":"about/README.md"}');export{e as data};
