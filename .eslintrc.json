@@ -1,20 +1,20 @@
 {
   "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "extends": [
-    "eslint:recommended", //
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
+  "overrides": [],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "rules": {
-    "arrayBracketNewline": ["error", "consistent"],
-    "@typescript-eslint/strict-boolean-expressions": [
-      2,
-      {
-        "allowString": false,
-        "allowNumber": false
-      }
-    ]
-  }
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {}
 }
