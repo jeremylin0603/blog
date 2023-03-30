@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-38905e71","path":"/code-memo/js-we-dont-know/event-loop.html","title":"Event Loop","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680189456000,"contributors":[{"name":"jeremy","email":"jeremyl0603@gmail.com","commits":1}]},"filePathRelative":"code-memo/js-we-dont-know/event-loop.md"}');export{e as data};

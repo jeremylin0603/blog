@@ -1,0 +1,1 @@
+import{_ as t,p as o,q as n,Q as e,t as a}from"./framework-cd43f88a.js";const c={},r=e("h1",{id:"event-loop",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#event-loop","aria-hidden":"true"},"#"),a(" Event Loop")],-1),s=[r];function _(d,l){return o(),n("div",null,s)}const h=t(c,[["render",_],["__file","event-loop.html.vue"]]);export{h as default};

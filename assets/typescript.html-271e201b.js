@@ -1,0 +1,1 @@
+import{_ as t,p as c,q as r,Q as e,t as s}from"./framework-cd43f88a.js";const a={},o=e("h1",{id:"typescript",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#typescript","aria-hidden":"true"},"#"),s(" *TypeScript")],-1),i=[o];function n(_,p){return c(),r("div",null,i)}const h=t(a,[["render",n],["__file","typescript.html.vue"]]);export{h as default};

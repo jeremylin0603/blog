@@ -1,0 +1,1 @@
+import{_ as a,p as t,q as s,Q as e,t as l}from"./framework-cd43f88a.js";const c={},r=e("h1",{id:"basketball",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#basketball","aria-hidden":"true"},"#"),l(" Basketball")],-1),o=[r];function n(_,d){return t(),s("div",null,o)}const b=a(c,[["render",n],["__file","basketball.html.vue"]]);export{b as default};

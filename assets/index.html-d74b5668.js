@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-44aa77dd","path":"/life-memo/","title":"存放 Coding 外的所有想法紀錄","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680189456000,"contributors":[{"name":"jeremy","email":"jeremyl0603@gmail.com","commits":1}]},"filePathRelative":"life-memo/README.md"}');export{e as data};
