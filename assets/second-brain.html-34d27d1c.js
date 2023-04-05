@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-27052ee6","path":"/life-memo/improvement/second-brain.html","title":"第二大腦","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680189456000,"contributors":[{"name":"jeremy","email":"jeremyl0603@gmail.com","commits":1}]},"filePathRelative":"life-memo/improvement/second-brain.md"}');export{e as data};
