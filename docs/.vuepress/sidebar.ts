@@ -17,12 +17,6 @@ const sidebar: SidebarConfig = [
     collapsible: true,
     children: [
       '/code-memo/markdown.md',
-      '/code-memo/eslint.md',
-      '/code-memo/prettier.md',
-      '/code-memo/linter-and-formatter.md',
-      '/code-memo/vscode.md',
-      '/code-memo/opinionated.md',
-      '/code-memo/vuepress',
       {
         text: 'Javascript',
         link: '/code-memo/js-we-dont-know',
@@ -32,12 +26,20 @@ const sidebar: SidebarConfig = [
             text: '前言',
             link: '/code-memo/js-we-dont-know/index.md'
           },
-          '/code-memo/js-we-dont-know/this.md',
-          '/code-memo/js-we-dont-know/truthy-falsy-nullish.md',
+          '/code-memo/js-we-dont-know/execution-context.md',
+          '/code-memo/js-we-dont-know/scope.md',
           '/code-memo/js-we-dont-know/hoisting.md',
-          '/code-memo/js-we-dont-know/execution-context.md'
+          '/code-memo/js-we-dont-know/thread.md',
+          '/code-memo/js-we-dont-know/this.md',
+          '/code-memo/js-we-dont-know/truthy-falsy-nullish.md'
         ]
-      }
+      },
+      '/code-memo/eslint.md',
+      '/code-memo/prettier.md',
+      '/code-memo/linter-and-formatter.md',
+      '/code-memo/vscode.md',
+      '/code-memo/opinionated.md',
+      '/code-memo/vuepress'
     ]
   },
   {

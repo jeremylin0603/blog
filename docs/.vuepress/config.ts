@@ -25,6 +25,10 @@ export default defineUserConfig({
       {
         text: 'Profile',
         link: '/about/profile.md'
+      },
+      {
+        text: 'Javascript',
+        link: '/code-memo/js-we-dont-know/index.md'
       }
     ],
     sidebarDepth: 1,

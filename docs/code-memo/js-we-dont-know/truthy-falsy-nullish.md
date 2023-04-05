@@ -98,5 +98,7 @@ const fn = (data) => {
 #### REF
 
 [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) @MDN
+
 [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) @MDN
+
 [Nullish](https://developer.mozilla.org/en-US/docs/Glossary/Nullish) @MDN

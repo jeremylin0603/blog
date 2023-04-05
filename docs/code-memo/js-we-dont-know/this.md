@@ -8,8 +8,6 @@
 
 - 整個程式運行所創建的第一個 execution context 為 global execution context，JS Engine 會主動建立一個 global object(browser 為 `window`)、和 `this`，並且 global 中的 `this` 指向 global object。
 
-- 但 `strick mode` 嚴格模式不綁定 `this`，因此 `strick mode` 的 `this` 為 `undefined`
-
 ### 最基本的 "this": 指向呼叫他的 context
 
 ```javascript
@@ -31,7 +29,7 @@ newFn() // newFn 的上一層 context 指向 global context，因此 log 為 'ou
 
 ### "this" in arrow function:
 
-這問題很單純，因為 arrow fn 沒有 this，所以 arrow fn 裡面的 this 就跟其他變數一樣，這個 scope 沒有就一路往 scope chain 找，直到找到其他有意義的 this 或是 global this 為止。
+這很單純，因為 arrow fn 沒有 this，所以 arrow fn 裡面的 this 就跟其他變數一樣，這個 scope 沒有就一路往 scope chain 找，直到找到其他有意義的 this 或是 global this 為止。
 
 ```javascript
 // arrow fn 怎麼對待變數 a，就會怎麽對待 this
@@ -62,7 +60,8 @@ obj.showNum() // 1
 const obj = {
   num: 1,
   showNum: function () {
-    console.log(this.num)
+    console.log(this.num) // 1
+    console.log(this === window) // false
     function showInsideNum() {
       console.log(this.num) // undefined
       console.log(this === window) // true
@@ -71,7 +70,7 @@ const obj = {
   }
 }
 
-obj.showNum() // 1
+obj.showNum()
 ```
 
 ### call, apply, bind
@@ -100,4 +99,6 @@ showBind.call(obj1, 3, 2) // 1, 3, 4
 showBind() // 1, 3, 4
 ```
 
-參考連結: [淺談 JavaScript 頭號難題 this：絕對不完整，但保證好懂](https://blog.techbridge.cc/2019/02/23/javascript-this/) @huli blog
+#### REF:
+
+[淺談 JavaScript 頭號難題 this：絕對不完整，但保證好懂](https://blog.techbridge.cc/2019/02/23/javascript-this/) @huli blog

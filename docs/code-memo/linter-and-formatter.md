@@ -115,5 +115,3 @@ const arr = [
 
 `editor.codeActionsOnSave`: `object`, 針對 ESLint 自動格式化所新增的擴展，支持 `source.fixAll` | `source.fixAll.eslint: boolean`
 更多詳見 [Improved Auto Fix on Save](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) @Official Doc - Version 2.0.4
-
-[Format Setting](https://code.visualstudio.com/docs/editor/codebasics#_formatting)
