@@ -34,6 +34,7 @@ const sidebar: SidebarConfig = [
           '/code-memo/js-we-dont-know/truthy-falsy-nullish.md'
         ]
       },
+      '/code-memo/nuxt3.md',
       '/code-memo/eslint.md',
       '/code-memo/prettier.md',
       '/code-memo/linter-and-formatter.md',
