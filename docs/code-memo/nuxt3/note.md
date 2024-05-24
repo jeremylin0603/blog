@@ -113,6 +113,13 @@ module.exports = {
 >
 > This specification has introduced new requirements on request parsing, particularly with regard to message framing in Section 6.3, to reduce the effectiveness of request smuggling.
 
+解法為在 web proxy 請求送出前主動刪除 `content-length`
+
+```js
+// ~/server/api/[...].ts
+if (event.node.req.method === 'DELETE') delete event.node.req.headers['content-length']
+```
+
 ##
 
 ### 首次請求 nuxt ssr page, 接著點擊瀏覽器的上一頁後再點擊下一頁（以下簡稱"上下頁"）, 不會重新向 web server 請求而是取得 cache document 生成頁面
