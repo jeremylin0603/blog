@@ -40,3 +40,7 @@ new Intl.DateTimeFormat('zh-Hant-TW', { hour: 'numeric', minute: 'numeric', seco
 ```
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+
+## URL Query
+
+以前一直認為 query 有多筆參數的格式為 `?id=1,2,3`，前端再 split 取出來，今天和同事聊才知道原來還可以 `?id=1&id=2&id=3`，而且 node.js 原生就會將這種寫法轉為 array，雖然說一樣要多一個步驟 `Array.isArray` 去判別單參數還是多參數，但是既然原生支持那以後除非有約定不然改用 `?id=1&id=2&id=3` 還是好一些，而且 checkbox 多選同 name 產出的 query 也是如此。
