@@ -89,12 +89,12 @@ Array.from('🏴󠁧󠁢󠁥󠁮󠁧󠁿') // ['🏴', '󠁧U+200D', '󠁢U+E006
 
 1. 常常會聽到的 ASCII 其實就是 Unicode 的前身，只單純定義了英文、數字、基本標點符號，和一些跳脫字元，Unicode 是向後相容 ASCII 的。
 
-2. 兩大編碼系統也相容 ASCII，但是 UTF-8 用一個 byte 來表達，與 ASCII 完全相符，因此 UTF-8 相較 UTF-16 更完整的相容 ASCII。
+2. 兩大編碼系統也相容 ASCII，但是 UTF-8 在表達與 ASCII 相同的字元時，一樣是用一個 byte 來表達，與 ASCII 完全相符，因此 UTF-8 相較 UTF-16 更完整的相容 ASCII。
 
 [WIKI-ASCII](https://zh.wikipedia.org/zh-tw/ASCII)
 
 ### 參考資料 && 推薦 JS 套件
 
-[在程式裡算 Emoji 字數的那些問題](https://medium.com/dcardlab/%E5%9C%A8%E7%A8%8B%E5%BC%8F%E8%A3%A1%E7%AE%97-emoji-%E5%AD%97%E6%95%B8%E7%9A%84%E9%82%A3%E4%BA%9B%E5%95%8F%E9%A1%8C-8e1a1170a499)
-[grapheme-breaker](https://github.com/foliojs/grapheme-breaker)
+[在程式裡算 Emoji 字數的那些問題](https://medium.com/dcardlab/%E5%9C%A8%E7%A8%8B%E5%BC%8F%E8%A3%A1%E7%AE%97-emoji-%E5%AD%97%E6%95%B8%E7%9A%84%E9%82%A3%E4%BA%9B%E5%95%8F%E9%A1%8C-8e1a1170a499)  
+[grapheme-breaker](https://github.com/foliojs/grapheme-breaker)  
 [grapheme-splitter](https://github.com/orling/grapheme-splitter)
