@@ -134,4 +134,29 @@ console.log(graphemes)
 console.log(graphemes.length) // 3
 ```
 
+分享我自己寫的一個簡單的 Vue3 composable util，目前這樣已經能解決我自己業務上的問題，未來再看有沒有需要調整
+
+```typescript
+export function useGraphemeLength() {
+  const segmenter = new Intl.Segmenter(void 0, { granularity: 'grapheme' })
+
+  function graphemeLength(input: MaybeRef<string | number>) {
+    const segments = segmenter.segment(String(unref(input)))
+    const graphemes = Array.from(segments, (s) => s.segment)
+    return {
+      graphemes,
+      length: graphemes.length
+    }
+  }
+
+  return {
+    graphemeLength
+  }
+}
+
+// how to use
+const { graphemeLength } = useGraphemeLength()
+graphemeLength('👩‍🦰👩‍👩‍👦‍👦🏳️‍🌈').length // 3
+```
+
 [MDN Intl.Segmenter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)
