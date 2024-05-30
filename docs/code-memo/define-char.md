@@ -102,6 +102,10 @@ Array.from('🏴󠁧󠁢󠁥󠁮󠁧󠁿') // ['🏴', '󠁧U+200D', '󠁢U+E006
 現在 JS 已經能夠原生支援協助開發者更好的判斷 ZWJ 格式的字元了
 
 ```js
+/**
+ * 第一個參數能夠指定語系，這邊我們不需要所以
+ * grapheme 表示希望將字串分割成圖形(grapheme)，圖形是指一個或多個字元組成的最小單位，在這個例子中會將由 ZWJ 多個字元組成的 emoji 當成一個圖形處理。
+ */
 const segmenter = new Intl.Segmenter(void 0, { granularity: 'grapheme' })
 
 // input -> '👩‍🦰👩‍👩‍👦‍👦🏳️‍🌈'
