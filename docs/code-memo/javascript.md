@@ -13,9 +13,9 @@
 > stopPropagation  
 > stopImmediatePropagation
 
-preventDefault 剛學很容易搞混，但跟這裡關聯不大，preventDefault 表示禁止元素原生已經預設的事件，例如 `<a>` 原生就預設了點擊後跳轉至連結的 click 事件，preventDefault 可以取消這種行為。
+preventDefault 剛開始很容易搞混，但其實關聯不大，preventDefault 很單純的表示移除 elem 原生已經預設的事件，例如 `<a>` 原生就預設了點擊後跳轉至連結的 click 事件，preventDefault 可以取消這種行為。
 
-stopPropagation 只是單純阻止事件傳播，若是 capture 則阻止讓子層捕獲，若 bobble 則阻止往父層冒泡。
+stopPropagation 阻止事件傳播，若是 capture 階段指定則阻止讓子層捕獲，若 bobble 階段指定則阻止往父層冒泡。
 
 stopImmediatePropagation 除了做到 stopPropagation 的工作以外，還阻止了同一個元素的同個事件類型，但沒辦法阻止比當下註冊順序還要前面的同個事件類型。
 

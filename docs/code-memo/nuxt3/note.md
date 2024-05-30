@@ -1,6 +1,6 @@
 # Nuxt 3 - 未整理隨筆
 
-### useFetch & useLazyFetch
+- ### useFetch & useLazyFetch
 
 在 server 端，兩者行為是完全一樣的，只有到了 client 端，lazy 會將欲請求的 promise 丟到 onBeforeMount 處理，使 route 不阻塞
 
@@ -35,9 +35,9 @@ export function useAsyncData(...args) {
 
 > server side 的 html 生成後就結束了，不會因為觸發某個變數的 setter 而回頭更新，結合 server 端無視 lazy 請求的設計，在請求時的 watch 應直接設置 immediate 確保準備生成 html 時所有資料都在預期中。
 
-##
+---
 
-### `<img>` onerror
+- ### `<img>` onerror
 
 - `<img>` 若請求失敗，其 onerror 事件在 server side 觸發後就結束了，client side 不會重新觸發一次，因此目前取巧的方法是在 server side 塞一個註記，讓 client side 按照註記生成與否去延後處理 onerror 事件。
   （但 server render 依然會渲染死圖，因此若有 onerror 後換成預設圖片的需求，user 依然會在第一個瞬間看到破圖，而後 script 跑到 onerror 才會看到預設圖片）
@@ -86,9 +86,9 @@ export default defineComponent({
 })
 ```
 
-##
+---
 
-### nuxt api server 的 proxy 在送出 `DELETE` method 時會出錯
+- ### nuxt api server 的 proxy 在送出 `DELETE` method 時會出錯
 
 這是由於其背後使用 `node-http-proxy` 套件，該套件會將不帶有 `content-length` 的 `DELETE` & `OPTIONS` method 補上 content-length: 0
 
@@ -120,17 +120,9 @@ module.exports = {
 if (event.node.req.method === 'DELETE') delete event.node.req.headers['content-length']
 ```
 
-##
+---
 
-### 首次請求 nuxt ssr page, 接著點擊瀏覽器的上一頁後再點擊下一頁（以下簡稱"上下頁"）, 不會重新向 web server 請求而是取得 cache document 生成頁面
-
-這種行為會導致頁面始終被快取在首次 ssr 的狀態。
-
-例如進入頁面後請求失敗使頁面顯示 fail page，此時做上下頁的操作後，頁面會直接快取上次請求取得的 document，而非失敗畫面，直到 script 在 client side 重新跑一次後才會刷新到正常頁面。
-
-##
-
-### `<NuxtLink>` 的 error
+- ### `<NuxtLink>` 的 error
 
 ```html
 <NuxtLink v-show="Boolean(storyOption.actionToId)" :to="`/${storyOption.actionToId}`">
@@ -141,15 +133,15 @@ if (event.node.req.method === 'DELETE') delete event.node.req.headers['content-l
 若 `storyOption.actionToId` 為空，NuxtLink 會拋出 fatal error 導致 crash 而且無法從錯誤訊息判斷錯誤來源，在複雜的結構下極難追蹤，需注意這種需求要用 v-if 而非 v-show 去避免傳給 `:to=""` 不必要的值
 目前猜測是被轉譯成 `to="/undefined"` 之類的...之後有空再回頭來研究原因
 
-##
+---
 
-### `<KeepAlive>`
+- ### `<KeepAlive>`
 
 待補
 
-##
+---
 
-### Nuxt useFetch 同請求短時間併發
+- ### Nuxt useFetch 同請求短時間併發
 
 useAsyncData 會維護一個佇列，每個請求在佇列中的生命週期為送出請求到 promise 的 finally 為止
 
@@ -184,3 +176,6 @@ if (nuxt._asyncDataPromises[key]) {
     ...
   }
 ```
+
+- ### Nuxt Error handle
+  在 Nuxt 框架下推薦使用 `showError` & `createError`
