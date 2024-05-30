@@ -93,8 +93,41 @@ Array.from('🏴󠁧󠁢󠁥󠁮󠁧󠁿') // ['🏴', '󠁧U+200D', '󠁢U+E006
 
 [WIKI-ASCII](https://zh.wikipedia.org/zh-tw/ASCII)
 
-### 參考資料 && 推薦 JS 套件
+### 參考資料
 
-[在程式裡算 Emoji 字數的那些問題](https://medium.com/dcardlab/%E5%9C%A8%E7%A8%8B%E5%BC%8F%E8%A3%A1%E7%AE%97-emoji-%E5%AD%97%E6%95%B8%E7%9A%84%E9%82%A3%E4%BA%9B%E5%95%8F%E9%A1%8C-8e1a1170a499)  
-[grapheme-breaker](https://github.com/foliojs/grapheme-breaker)  
-[grapheme-splitter](https://github.com/orling/grapheme-splitter)
+[在程式裡算 Emoji 字數的那些問題](https://medium.com/dcardlab/%E5%9C%A8%E7%A8%8B%E5%BC%8F%E8%A3%A1%E7%AE%97-emoji-%E5%AD%97%E6%95%B8%E7%9A%84%E9%82%A3%E4%BA%9B%E5%95%8F%E9%A1%8C-8e1a1170a499)
+
+## Update 原生支援的 `Intl.Segmenter`
+
+現在 JS 已經能夠原生支援協助開發者更好的判斷 ZWJ 格式的字元了
+
+```js
+const segmenter = new Intl.Segmenter(void 0, { granularity: 'grapheme' })
+
+// input -> '👩‍🦰👩‍👩‍👦‍👦🏳️‍🌈'
+const input = String.fromCodePoint(
+  0x1f469,
+  0x200d,
+  0x1f9b0,
+  0x1f469,
+  0x200d,
+  0x1f469,
+  0x200d,
+  0x1f466,
+  0x200d,
+  0x1f466,
+  0x1f3f3,
+  0xfe0f,
+  0x200d,
+  0x1f308
+)
+
+const segments = segmenter.segment(input)
+
+const graphemes = Array.from(segments, (s) => s.segment)
+
+console.log(graphemes)
+console.log(graphemes.length) // 3
+```
+
+[MDN Intl.Segmenter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)
