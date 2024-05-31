@@ -178,4 +178,5 @@ if (nuxt._asyncDataPromises[key]) {
 ```
 
 - ### Nuxt Error handle
-  在 Nuxt 框架下推薦使用 `showError` & `createError`
+  - 在 Nuxt 框架下推薦使用 `showError` & `createError`
+  -
