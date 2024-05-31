@@ -71,11 +71,13 @@ Array.from('💩').length // 1 -> 此時一個代理對為一個值 ["💩"].len
 '💩'.codePointAt() // 128169
 ```
 
-## 麻煩的「零寬連字(ZWJ)」
+## 麻煩的「零寬連字(ZWJ - U+200D)」
 
 1. 在 emoji 系統中，還存在各種不同的 Unicode 字元組合成一個新的符號，包含 emoji 和部分國家的語言，稱為 ZWJ(Zero Width Joiner)。
 
-2. JS 在判斷一個 ZWJ 符號時，是以「所有組合」下去判別的，所以螢幕上看到的一個字符對於 JS 來說並不是一個字符或是一個代理對，而是「一群字符」，因此對於 ZWJ，沒有一個常規的做法去判斷長度。
+2. JS 在判斷一個 ZWJ 符號時，是以「所有組合」下去判別的，所以螢幕上看到的一個字符對於 JS 來說並不是一個字符或是一個代理對，而是「一群字符」，~~因此對於 ZWJ，沒有一個常規的做法去判斷長度。~~(已更新原生支援的方法，[詳見文章底部](#update-原生支援的-intl-segmenter))
+
+3. ZWJ 就像個粘合劑，關鍵碼位是`U+200D`，可以把不同的 emoji 連起來，例如女生加上帽子就變成一個戴帽子的女生，`U+200D` 就是那個加號。
 
 ```js
 '🏴󠁧󠁢󠁥󠁮󠁧󠁿'.split('') // ['\uD83C', '\uDFF4', '\uDB40', '\uDC67', '\uDB40', '\uDC62', '\uDB40', '\uDC65', '\uDB40', '\uDC6E', '\uDB40', '\uDC67', '\uDB40', '\uDC7F']
@@ -101,9 +103,11 @@ Array.from('🏴󠁧󠁢󠁥󠁮󠁧󠁿') // ['🏴', '󠁧U+200D', '󠁢U+E006
 
 現在 JS 已經能夠原生支援協助開發者更好的判斷 ZWJ 格式的字元了
 
+> NOTICE: FireFox 在 2024/04 才開始支援此語法，測試時要注意版本是否有跟上 [CanIUse](https://caniuse.com/?search=Intl.Segmenter)
+
 ```js
 /**
- * 第一個參數能夠指定語系，這邊我們不需要所以
+ * 第一個參數能夠指定語系，這邊我們不需要所以直接給 `void 0`
  * grapheme 表示希望將字串分割成圖形(grapheme)，圖形是指一個或多個字元組成的最小單位，在這個例子中會將由 ZWJ 多個字元組成的 emoji 當成一個圖形處理。
  */
 const segmenter = new Intl.Segmenter(void 0, { granularity: 'grapheme' })

@@ -35,6 +35,7 @@ const sidebar: SidebarConfig = [
         ]
       },
       '/code-memo/nuxt3/note.md',
+      '/code-memo/define-char.md',
       '/code-memo/eslint.md',
       '/code-memo/prettier.md',
       '/code-memo/linter-and-formatter.md',
