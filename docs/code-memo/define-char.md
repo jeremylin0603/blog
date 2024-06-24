@@ -28,6 +28,10 @@ const utf8_smile = new TextEncoder().encode('😊')
 console.log(utf8_smile) // Uint8Array [ 240, 159, 152, 138 ] --> 4 bytes (0xF0 0x9F 0x98 0x8A)
 ```
 
+> UTF-8 字元數雖是動態的，但是可以無縫將字元連接在一起，判斷的依據就是每一組 UTF-8 字元的第一個字的`最高位`。  
+> 舉例 `A` 的十六進制為 `0x41` 轉為二進制後為 `1000001`，`最高位` 看最左邊的數字 1 即為最高位，這裡只有一個 1 表示字元佔 1 byte。  
+> 舉例 `笑死` 的十六進制為 `0xE7 0xAC 0x91 0xE6 0xAD 0xBB` 第一個字元轉為二進制後為 `11100111`，這裡最高位有三個 1 表示字元佔 3 byte。
+
 2. UTF-16 的系統中，使用 2 or 4 個 byte 來表達一個 char，其中當 2 byte 無法表達時，（也就是超過第 0 平面「BMP」的範圍`U+0000`~`U+FFFF`），會改用 4 byte 來表達，此時這 2 + 2 byte 的組合稱為代理對(surrogate pair)
 
 ```js
@@ -42,7 +46,7 @@ console.log(utf16_smile) // Uint16Array [ 55357, 56842 ] => 4 bytes (0xD83D 0xDE
 
 > `0x` 開頭表達數字為 16 進位，因此 0x0041 => 4 \* 16 + 1 = 65
 
-3. 結合前面兩點，通常使用 UTF-8 編碼會更省空間。
+3. 結合前面兩點，通常當存儲的訊息大多都是 ASCII 的字元時使用 UTF-8 編碼會更省空間，反之則用 UTF-8 編碼，這是因為大多 ASCII 編碼外的字元 UTF8 都使用 3 字元，這也是 UTF-16 被發明的原因 - 為了存儲 ASCII 以外的字元更高效。
 
 ## Javascript 的表達與字元長度
 
@@ -89,11 +93,19 @@ Array.from('🏴󠁧󠁢󠁥󠁮󠁧󠁿') // ['🏴', '󠁧U+200D', '󠁢U+E006
 
 ### 字元總表 - ASCII
 
-1. 常常會聽到的 ASCII 其實就是 Unicode 的前身，只單純定義了英文、數字、基本標點符號，和一些跳脫字元，Unicode 是向後相容 ASCII 的。
+1. ASCII 是最早的計算機字元標準，只單純定義了英文、數字、基本標點符號，和一些跳脫字元，Unicode 是向後相容 ASCII 的。
 
 2. 兩大編碼系統也相容 ASCII，但是 UTF-8 在表達與 ASCII 相同的字元時，一樣是用一個 byte 來表達，與 ASCII 完全相符，因此 UTF-8 相較 UTF-16 更完整的相容 ASCII。
 
 [WIKI-ASCII](https://zh.wikipedia.org/zh-tw/ASCII)
+
+### URL 編碼
+
+www 發展之初，url 只需要 ASCII 的編碼就能足夠表達路徑和查詢等基本需求，但是隨著 www 開始推廣到世界各地，為了滿足需求 URL 編碼開始兼容了其他語系和擴展更多功能符號。
+
+1. URL 編碼基本上就是混合了 ASCII + UTF-8，當 URL 中的字元超出 ASCII 的範圍時就會將字元轉為 UTF-8 後再改成 URL 編碼格式。
+
+2. 送出請求時如 GET、POST form 等
 
 ### 參考資料
 
