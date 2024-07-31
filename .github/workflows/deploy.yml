@@ -16,17 +16,17 @@ jobs:
     # 執行步驟
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 7
           # 是否用 pnpm 安裝依賴
           run_install: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           # 與開發環境一至避免意外
           node-version: 16.14.2
